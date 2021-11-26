@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,16 +22,60 @@ namespace Roman.webApi
         public void ConfigureServices(IServiceCollection services)
         {
             services
-               .AddControllers();
+               .AddControllers()
 
-            services.AddSwaggerGen(c => {
+                  .AddNewtonsoftJson(options =>
+                  {
+                      options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                      options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                  });
 
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Roman.webApi", Version = "v1" });
+            services.AddSwaggerGen(c =>
+            {
+                //definindo nome do sweagger e a versão
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SpMedicalGroup.webApi", Version = "v1" });
+
+
+                // Set the comments path for the Swagger JSON and UI / isso também serve para ler os comentários dos métodos
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
-
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("http://localhost:3000")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
+
+
+
+
+            services
+                    .AddAuthentication(options =>
+                    {
+                        options.DefaultAuthenticateScheme = "JwtBearer";
+                        options.DefaultChallengeScheme = "JwtBearer";
+                    })
+
+                    .AddJwtBearer("JwtBearer", options =>
+                    {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateLifetime = true,
+                            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Roman-chave-autenticacao")),
+                            ClockSkew = TimeSpan.FromMinutes(30),
+                            ValidIssuer = "Roman.webAPI",
+                            ValidAudience = "Roman.webAPI"
+                        };
+                    });
         }
 
 
@@ -51,6 +97,12 @@ namespace Roman.webApi
            });
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

@@ -26,6 +26,7 @@ namespace Roman.webApi.Controllers
         {
             try
             {
+
                 if (novoProjeto == null)
                 {
                     return BadRequest(
@@ -37,14 +38,12 @@ namespace Roman.webApi.Controllers
                         ); 
                 }
 
-
                 //Lembrar de pegar o Id do usuairo pelo token
                 _professorRepository.CriarProjeto(novoProjeto);
                 return StatusCode(201);
             }
             catch (Exception erro)
             {
-
                 return BadRequest(erro);
             }
         }
