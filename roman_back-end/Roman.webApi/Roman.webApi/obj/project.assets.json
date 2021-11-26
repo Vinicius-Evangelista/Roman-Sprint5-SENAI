@@ -7757,11 +7757,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\52645548890\\source\\repos\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
+      "projectUniqueName": "C:\\Users\\52645548890\\Desktop\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
       "projectName": "Roman.webApi",
-      "projectPath": "C:\\Users\\52645548890\\source\\repos\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
+      "projectPath": "C:\\Users\\52645548890\\Desktop\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
       "packagesPath": "C:\\Users\\52645548890\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\52645548890\\source\\repos\\Roman.webApi\\Roman.webApi\\obj\\",
+      "outputPath": "C:\\Users\\52645548890\\Desktop\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\52645548890\\AppData\\Roaming\\NuGet\\NuGet.Config",

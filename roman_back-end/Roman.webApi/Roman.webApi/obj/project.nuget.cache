@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i891Ol52GJN9m3EABJkpYDRUE6lB+uij/0QyFmbL8VDPeLxCj6Z+ouxS0dd/HynFmnoZRRKVyrVur33MOldCHA==",
+  "dgSpecHash": "1LNfY42uNhPMrtNJlxDGVW8ZcB1sg5eI9qtlnytsVOdGPT6kyX3vR4Jrh+2A+0eFiNUK/yPPI8yU/HZTHoR4zQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\52645548890\\source\\repos\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
+  "projectFilePath": "C:\\Users\\52645548890\\Desktop\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\52645548890\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\52645548890\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.12\\microsoft.aspnetcore.authentication.jwtbearer.5.0.12.nupkg.sha512",
