@@ -20,9 +20,9 @@ namespace Roman.webApi.Repositories
             return (context.Projetos.ToList());
         }
 
-        public Usuario Login(string senha, string email)
+        public Usuario Login(string email, string senha)
         {
-            return (context.Usuarios.FirstOrDefault(u => u.Senha == senha && u.Email == email));
+            return (context.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha));
         }
     }
 }
