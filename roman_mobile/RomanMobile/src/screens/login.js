@@ -23,7 +23,7 @@ export default class Login extends Component {
   render() {
     return (
     <View>
-        teste
+        teste login
     </View>
     )
   }
