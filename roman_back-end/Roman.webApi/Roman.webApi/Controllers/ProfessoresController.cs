@@ -5,6 +5,7 @@ using Roman.webApi.Interfaces;
 using Roman.webApi.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@ namespace Roman.webApi.Controllers
         {
             try
             {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
                 if (novoProjeto == null)
                 {
@@ -39,7 +41,7 @@ namespace Roman.webApi.Controllers
                 }
 
                 //Lembrar de pegar o Id do usuairo pelo token
-                _professorRepository.CriarProjeto(novoProjeto);
+                _professorRepository.CriarProjeto(novoProjeto, idUsuario);
                 return StatusCode(201);
             }
             catch (Exception erro)

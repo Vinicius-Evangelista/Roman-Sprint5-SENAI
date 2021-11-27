@@ -12,6 +12,6 @@ namespace Roman.webApi.Interfaces
         /// Cria novos projetos
         /// </summary>
         /// <param name="novoprojeto">novo projeto que será criado</param>
-        void CriarProjeto(Projeto novoprojeto);
+        void CriarProjeto(Projeto novoprojeto, int idUsuario);
     }
 }

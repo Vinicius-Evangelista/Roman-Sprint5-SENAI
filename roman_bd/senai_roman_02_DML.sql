@@ -24,7 +24,7 @@ INSERT INTO tema(nomeTema)
 VALUES ('React-Native'),('Infra de uma rede pequena'),('Design')
 GO
 
-INSERT INTO projeto(idUsuario,idTema,nomeProjeto,descricao,dataCriacao)
+INSERT INTO projeto(idProfessor,idTema,nomeProjeto,descricao,dataCriacao)
 VALUES (1,1,'Estelar','Projeto desenvolvido de pequeno porte, e diversos fatores','24-09-2019'),
 		(2,2,'Futuro','Projeto desenvolvido','27-09-2021')
 GO

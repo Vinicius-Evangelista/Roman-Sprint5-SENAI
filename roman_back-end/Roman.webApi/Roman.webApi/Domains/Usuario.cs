@@ -10,7 +10,6 @@ namespace Roman.webApi.Domains
         public Usuario()
         {
             Professors = new HashSet<Professor>();
-            Projetos = new HashSet<Projeto>();
         }
 
         public short IdUsuario { get; set; }
@@ -20,6 +19,5 @@ namespace Roman.webApi.Domains
 
         public virtual TipoUsuario IdTipoUsuarioNavigation { get; set; }
         public virtual ICollection<Professor> Professors { get; set; }
-        public virtual ICollection<Projeto> Projetos { get; set; }
     }
 }

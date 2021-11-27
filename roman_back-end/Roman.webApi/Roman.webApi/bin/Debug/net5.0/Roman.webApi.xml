@@ -9,7 +9,7 @@
             interace que armazena os métodos da usuariorepository
             </summary>
         </member>
-        <member name="M:Roman.webApi.Interfaces.IProfessorRepository.CriarProjeto(Roman.webApi.Domains.Projeto)">
+        <member name="M:Roman.webApi.Interfaces.IProfessorRepository.CriarProjeto(Roman.webApi.Domains.Projeto,System.Int32)">
             <summary>
             Cria novos projetos
             </summary>

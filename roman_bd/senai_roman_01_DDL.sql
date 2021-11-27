@@ -1,4 +1,5 @@
 create database roman_bd;
+GO
 
 use roman_bd;
 go
@@ -42,12 +43,10 @@ GO
 
 CREATE TABLE projeto(
 	idProjeto INT PRIMARY KEY IDENTITY,
-	idUsuario SMALLINT FOREIGN KEY REFERENCES usuario (idUsuario),
+	idProfessor SMALLINT FOREIGN KEY REFERENCES professor (idProfessor),
 	idTema SMALLINT FOREIGN KEY REFERENCES tema(idTema),
 	nomeProjeto VARCHAR(120),
 	descricao VARCHAR(200),
 	dataCriacao DATE
-	
-
 );
 GO

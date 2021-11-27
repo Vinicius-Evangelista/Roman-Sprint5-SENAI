@@ -13,12 +13,19 @@ namespace Roman.webApi.Repositories
 
         RomanContext context = new RomanContext();
 
-        public void CriarProjeto(Projeto novoprojeto)
+        public void CriarProjeto(Projeto novoprojeto, int idUsuario)
         {
+
+            Projeto projeto = new Projeto()
+            {
+                IdProfessor = context.Professors.FirstOrDefault(p => p.IdUsuario == idUsuario).IdProfessor,
+                IdTema = novoprojeto.IdTema,
+                NomeProjeto = novoprojeto.NomeProjeto,
+                Descricao = novoprojeto.Descricao,
+                DataCriacao = novoprojeto.DataCriacao,
+            };
             
-
-
-            context.Projetos.Add(novoprojeto);
+            context.Projetos.Add(projeto);
 
             context.SaveChanges();
         }
