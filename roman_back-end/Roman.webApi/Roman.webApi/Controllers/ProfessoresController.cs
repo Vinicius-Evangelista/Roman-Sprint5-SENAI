@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Roman.webApi.Domains;
 using Roman.webApi.Interfaces;
@@ -22,12 +23,12 @@ namespace Roman.webApi.Controllers
             _professorRepository = new ProfessorRepository();
         }
 
+        [Authorize( Roles = "2")]
         [HttpPost("Cadastrar")]
         public IActionResult CadastrarProjeto(Projeto novoProjeto)
         {
             try
             {
-                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
                 if (novoProjeto == null)
                 {
@@ -39,6 +40,8 @@ namespace Roman.webApi.Controllers
                         }
                         ); 
                 }
+
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
                 //Lembrar de pegar o Id do usuairo pelo token
                 _professorRepository.CriarProjeto(novoProjeto, idUsuario);
