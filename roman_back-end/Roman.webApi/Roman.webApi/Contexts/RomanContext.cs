@@ -29,7 +29,8 @@ namespace Roman.webApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-DHSRSVI\\SQLEXPRESS; initial catalog=roman_bd; user Id=sa; pwd=senai@132;");
+               // optionsBuilder.UseSqlServer("Data Source=DESKTOP-DHSRSVI\\SQLEXPRESS; initial catalog=roman_bd; user Id=sa; pwd=senai@132;");
+                optionsBuilder.UseSqlServer("Data Source=NOTE0113A3\\SQLEXPRESS; initial catalog=roman_bd; user Id=sa; pwd=senai@132;");
             }
         }
 
