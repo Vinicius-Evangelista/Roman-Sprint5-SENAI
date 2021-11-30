@@ -4,6 +4,8 @@ import {
   Text,
   View,
   TextInput,
+  Pressable,
+  Alert
 } from 'react-native';
 
 import { Picker } from '@react-native-picker/picker';
@@ -59,6 +61,9 @@ export default class Cadastro extends Component {
             placeholderTextColor={'black'}
           />
 
+        <Pressable style = {styles.cadastroButton}>
+          <Text style = {styles.cadastroButtonText}>Cadastrar</Text>
+        </Pressable>
 
         </View>
       </View>
@@ -69,8 +74,9 @@ export default class Cadastro extends Component {
 const styles = StyleSheet.create({
 
   main: {
-    alignItems: 'center',
-    backgroundColor: 'white'
+    alignItems : 'center',
+    backgroundColor: 'white',
+    flex : 1
   },
 
 
@@ -86,6 +92,12 @@ const styles = StyleSheet.create({
     fontFamily: 'RedHatDisplay-Medium',
     fontSize: 30
 
+  },
+
+  boxInputs : {
+    alignItems : 'center',
+    justifyContent : 'space-around',
+    flex: 1
   },
 
   cadastroInputs: {
@@ -105,7 +117,23 @@ const styles = StyleSheet.create({
     height: 151.04,
     backgroundColor: '#8FB7C6',
     borderRadius: 31,
-    justifyContent : 'flex-start',
+    textAlignVertical: 'top',
+    paddingLeft: 32,
+    paddingRight: 32
   },
+
+  cadastroButton: {
+    width: 177,
+    height: 61,
+    backgroundColor : '#226089',
+    paddingLeft : 14,
+    paddingTop : 10,
+  },
+
+  cadastroButtonText : {
+   fontSize : 31,
+   color : 'white',
+   fontFamily: 'RedHatDisplay-Bold',
+  } 
 
 });
