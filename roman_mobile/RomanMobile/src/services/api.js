@@ -13,6 +13,7 @@ baseURL: 'http://192.168.3.253:5000/api'
 
 // api rafa
 // baseURL: 'http://192.168.15.34:5000/api'
+baseURL: 'http://192.168.4.55:5000/api' 
 
 //pegar ip: abrir cmd e escrever 'ipconfig' ->  Endereço IPv4
 });

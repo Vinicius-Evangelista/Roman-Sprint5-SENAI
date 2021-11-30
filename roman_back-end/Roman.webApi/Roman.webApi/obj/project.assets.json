@@ -7752,11 +7752,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\52645548890\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\47499026833\\.nuget\\packages\\": {}
+>>>>>>> 278ed9bb7a6f1c211423846669ea85b552315230
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\52645548890\\Desktop\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
       "projectName": "Roman.webApi",
       "projectPath": "C:\\Users\\52645548890\\Desktop\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
@@ -7765,6 +7770,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\52645548890\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\47499026833\\Downloads\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
+      "projectName": "Roman.webApi",
+      "projectPath": "C:\\Users\\47499026833\\Downloads\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
+      "packagesPath": "C:\\Users\\47499026833\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\47499026833\\Downloads\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\47499026833\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 278ed9bb7a6f1c211423846669ea85b552315230
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7843,7 +7858,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> 278ed9bb7a6f1c211423846669ea85b552315230
       }
     }
   }

@@ -29,12 +29,17 @@ namespace Roman.webApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
+<<<<<<< HEAD
                 //Vinicius Casa
                 //optionsBuilder.UseSqlServer("Data Source=DESKTOP-DHSRSVI\\SQLEXPRESS; initial catalog=roman_bd; user Id=sa; pwd=senai@132;");
 
                 //Vinicius-Senai
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-9K54HD5\\SQLEXPRESS;initial catalog=roman_bd; user Id=sa; pwd=senai@132;");
 
+=======
+               // optionsBuilder.UseSqlServer("Data Source=DESKTOP-DHSRSVI\\SQLEXPRESS; initial catalog=roman_bd; user Id=sa; pwd=senai@132;");
+                optionsBuilder.UseSqlServer("Data Source=NOTE0113A3\\SQLEXPRESS; initial catalog=roman_bd; user Id=sa; pwd=senai@132;");
+>>>>>>> 278ed9bb7a6f1c211423846669ea85b552315230
             }
         }
 

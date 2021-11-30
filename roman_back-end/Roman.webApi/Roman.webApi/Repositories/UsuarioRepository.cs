@@ -1,4 +1,5 @@
-﻿using Roman.webApi.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using Roman.webApi.Contexts;
 using Roman.webApi.Domains;
 using Roman.webApi.Interfaces;
 using System;
@@ -17,7 +18,7 @@ namespace Roman.webApi.Repositories
 
         public List<Projeto> ListarProjetos()
         {
-            return (context.Projetos.ToList());
+            return (context.Projetos.Include(p => p.IdTemaNavigation).Include(p => p.IdProfessorNavigation).ToList());
         }
 
         public Usuario Login(string email, string senha)
