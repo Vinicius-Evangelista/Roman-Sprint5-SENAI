@@ -90,11 +90,14 @@ renderItem = ({item}) => (
        color: 'white',
        fontWeight: 'bold'
     },
+    flatItemInfo: {
+       padding: 3
+    },
   
     header: {
       backgroundColor: '#DAD6D6',
       width: 410,
-      height: 66,
+      height: 69,
       alignItems: 'center',
       justifyContent: 'center'
     },
