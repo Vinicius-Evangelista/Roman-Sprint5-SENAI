@@ -35,16 +35,12 @@ export default class Home extends Component {
     return (
       <View style={styles.main}>
       {/* Cabeçalho - Header */}
-      <View style={styles.mainHeader}>
-        <View style={styles.mainHeaderRow}>
-          <Text style={styles.mainHeaderText}>{'Projetos'.toUpperCase()}</Text>
+      <View style={styles.header}>
+          <Text style={styles.headerText}>Projetos</Text>
         </View>
 
-        <View style={styles.mainHeaderLine}></View>
-      </View>
-
       {/* Corpo - Body */}
-      <View style={styles.mainBody}>
+      <View  style={styles.boxInputs}>
         <FlatList
           contentContainerStyle={styles.mainBodyContent}
           data={this.state.listaProjetos}
@@ -59,11 +55,14 @@ export default class Home extends Component {
 renderItem = ({item}) => (
   // <Text style={{ fontSize: 20, color: 'red' }}>{item.nomeEvento}</Text>
 
-  <View style={styles.flatItemRow}>
-    <View style={styles.flatItemContainer}>
-      <Text style={styles.flatItemTitle}>{item.nomeProjeto}</Text>
-      <Text style={styles.flatItemInfo}>{item.descricao}</Text>
-
+  <View  style={styles.boxInputs}>
+    <View style={styles.cadastroInputs}>
+      <Text style={styles.projeto}>Projeto {item.nomeProjeto}</Text>
+      <Text style={styles.flatItemInfo}>Descrição: {item.descricao}</Text>
+      <Text style={styles.flatItemInfo}>Professor: {item.idProfessorNavigation.nomeProfessor}</Text>
+      <Text style={styles.flatItemInfo}>
+      Tema: {item.idTemaNavigation.nomeTema}
+      </Text>
       <Text style={styles.flatItemInfo}>
         {Intl.DateTimeFormat("pt-BR", {
                           year: 'numeric', month: 'short', day: 'numeric',
@@ -81,87 +80,76 @@ renderItem = ({item}) => (
   }
 
   const styles = StyleSheet.create({
-    // conteúdo da main
+
     main: {
-      flex: 1,
-      backgroundColor: '#F1F1F1',
-      height: 0.3
+      alignItems : 'center',
+      backgroundColor: 'white',
+      flex : 1
     },
-    // cabeçalho
-    mainHeader: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#DAD6D6' //a
-    },
-    mainHeaderRow: {
-      flexDirection: 'row',
-      color: '#EFEFEF',
-     
-    },
-    // imagem do cabeçalho
-    mainHeaderImg: {
-      width: 22,
-      height: 22,
-      tintColor: '#ccc',
-      marginRight: -5,
-      marginTop: -12,
-      backgroundColor: 'red'
-    },
-    // texto do cabeçalho
-    mainHeaderText: {
-      fontSize: 16,
-      letterSpacing: 5,
-      color: '#999',
-      backgroundColor: '' //projeto
-    },
-    // linha de separação do cabeçalho
-    mainHeaderLine: {
-      width: 220,
-      paddingTop: 10,
-      borderBottomColor: '#999',
-      borderBottomWidth: 1,
-     
+    projeto: {
+       color: 'white',
+       fontWeight: 'bold'
     },
   
-    // conteúdo do body
-    mainBody: {
-      flex: 4,
+    header: {
+      backgroundColor: '#DAD6D6',
+      width: 410,
+      height: 66,
+      alignItems: 'center',
+      justifyContent: 'center'
     },
-    // conteúdo da lista
-    mainBodyContent: {
-      paddingTop: 30,
-      paddingRight: 50,
-      paddingLeft: 50,
+  
+    headerText: {
+      fontFamily: 'RedHatDisplay-Regular',
+      fontSize: 30,
+      color : '#444343'
+  
     },
-    // dados do evento de cada item da lista (ou seja, cada linha da lista)
-    flatItemRow: {
-      flexDirection: 'row',
-      borderBottomWidth: 1,
-      borderBottomColor: '#ccc',
-      marginTop: 40,
+  
+    boxInputs : {
+      alignItems : 'center',
+      justifyContent : 'space-around',
+      flex : 1
     },
-    flatItemContainer: {
-      flex: 1,
-    },
-    flatItemTitle: {
+  
+    cadastroInputs: {
+      fontFamily: 'RedHatDisplay-Regular',
       fontSize: 16,
-      color: '#333',
+      width: 321,
+      height: 140,
+      backgroundColor: '#8FB7C6',
+      borderRadius: 31,
+      // paddingLeft: 30,
+      // paddingTop: 1,s
+      marginTop:35,
+      alignItems: 'center',
+      justifyContent: 'center'
     },
-    flatItemInfo: {
-      fontSize: 12,
-      color: '#999',
-      lineHeight: 24,
+  
+    cadastroInputsDescricao: {
+      fontFamily: 'RedHatDisplay-Regular',
+      fontSize: 21,
+      width: 317,
+      height: 151.04,
+      backgroundColor: '#8FB7C6',
+      borderRadius: 31,
+      textAlignVertical: 'top',
+      paddingLeft: 32,
+      paddingRight: 32
     },
-    flatItemImg: {
-      justifyContent: 'center',
+  
+    cadastroButton: {
+      width: 177,
+      height: 61,
+      backgroundColor : '#226089',
+      paddingLeft : 14,
+      paddingTop : 10,
     },
-    flatItemImgIcon: {
-      width: 26,
-      height: 26,
-      tintColor: '#B727FF',
-    },
-    footer: {
-      backgroundColor: '#226089'
-    }
+  
+    cadastroButtonText : {
+     fontSize : 31,
+     color : 'white',
+     fontFamily: 'RedHatDisplay-Regular',
+    } 
+  
   });

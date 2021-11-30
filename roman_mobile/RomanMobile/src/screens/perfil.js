@@ -16,8 +16,8 @@ export default class Perfil extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nomeProfessor: '',
-      email: '',
+      nomeProfessor: 'Teste',
+      email: 'Teste@teste.com',
       base64: '',
     };
   }
@@ -73,17 +73,10 @@ export default class Perfil extends Component {
     return (
       <View style={styles.main}>
         {/* Cabeçalho - Header */}
-        <View style={styles.mainHeader}>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              onPress={this.takePicture}
-              style={styles.capture}></TouchableOpacity>
-          </View>
-          <View style={styles.mainHeaderRow}>
-            <Text style={styles.mainHeaderText}>{'Perfil'.toUpperCase()}</Text>
-          </View>
-          <View style={styles.mainHeaderLine} />
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Perfil</Text>
         </View>
+        
 
         {/* Corpo - Body - Section */}
         <View style={styles.mainBody}>
@@ -104,13 +97,6 @@ export default class Perfil extends Component {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.footer}>
-         <Text>A</Text> 
-         <Image
-            source={require('../../assets/edit.png')}
-            style={styles.imgPerfil}
-          />
-        </View>
       </View>
     );
   }
@@ -118,11 +104,95 @@ export default class Perfil extends Component {
 
 const styles = StyleSheet.create({
   // conteúdo da main
+ 
   main: {
-    flex: 1,
-    backgroundColor: '#F1F1F1',
+    alignItems : 'center',
+    backgroundColor: 'white',
+    flex : 1
   },
-  // cabeçalho
+
+
+  header: {
+    backgroundColor: '#DAD6D6',
+    width: 410,
+    height: 66,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  headerText: {
+    fontFamily: 'RedHatDisplay-Medium',
+    fontSize: 30,
+    color : '#444343'
+
+  },
+
+  boxInputs : {
+    alignItems : 'center',
+    justifyContent : 'space-around',
+    flex : 1
+  },
+
+  cadastroInputs: {
+    fontFamily: 'RedHatDisplay-Bold',
+    fontSize: 21,
+    width: 321,
+    height: 96,
+    backgroundColor: '#8FB7C6',
+    borderRadius: 31,
+    paddingLeft: 30,
+    paddingTop: 1,
+    marginTop:35
+  },
+
+  cadastroInputsDescricao: {
+    fontFamily: 'RedHatDisplay-Bold',
+    fontSize: 21,
+    width: 317,
+    height: 151.04,
+    backgroundColor: '#8FB7C6',
+    borderRadius: 31,
+    textAlignVertical: 'top',
+    paddingLeft: 32,
+    paddingRight: 32
+  },
+
+  cadastroButton: {
+    width: 177,
+    height: 61,
+    backgroundColor : '#226089',
+    paddingLeft : 14,
+    paddingTop : 10,
+  },
+
+  cadastroButtonText : {
+   fontSize : 31,
+   color : 'white',
+   fontFamily: 'RedHatDisplay-Bold',
+  },
+  // botão de logout
+  btnLogout: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 80,
+    width: 240,
+    borderTopWidth: 1,
+    borderColor: '#ccc',
+    marginBottom: 50,
+  },
+  // texto do botão
+  btnLogoutText: {
+    fontSize: 16,
+    fontFamily: 'Open Sans',
+    color: '#B727FF',
+  },
+  footer: {
+    backgroundColor: '#226089',
+    height: 85
+  },
+  imgPerfil: {
+     width: 10
+  },
   mainHeader: {
     flex: 1,
     justifyContent: 'center',
@@ -175,28 +245,5 @@ const styles = StyleSheet.create({
     color: '#999',
     fontSize: 16,
     marginBottom: 20,
-  },
-  // botão de logout
-  btnLogout: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 80,
-    width: 240,
-    borderTopWidth: 1,
-    borderColor: '#ccc',
-    marginBottom: 50,
-  },
-  // texto do botão
-  btnLogoutText: {
-    fontSize: 16,
-    fontFamily: 'Open Sans',
-    color: '#B727FF',
-  },
-  footer: {
-    backgroundColor: '#226089',
-    height: 85
-  },
-  imgPerfil: {
-     width: 10
   }
 });
