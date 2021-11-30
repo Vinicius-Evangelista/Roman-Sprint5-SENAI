@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
+
+//Components React-Native
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
-  Pressable,
+  TouchableOpacity,
   Alert
 } from 'react-native';
 
-import { Picker } from '@react-native-picker/picker';
-
+//Components importados
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import RNPickerSelect from 'react-native-picker-select';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+//Services
 import api from '../services/api';
 
 export default class Cadastro extends Component {
@@ -28,6 +32,27 @@ export default class Cadastro extends Component {
     };
   }
 
+  cadastrarProjeto = async () => {
+    try {
+
+      let projeto = {
+        idTema : this.state.idTema,
+        nomeProjeto : this.state.nomeProjeto,
+        descricao : this.state.descricao,
+        dataCriacao : new Date()
+      };
+      const resposta = await api.post('/Professores/cadastrar', projeto, {});
+
+      if(resposta.status === 201){
+        console.warn('foi criado !')
+      }
+      
+    } catch (error) {
+      console.warn(error)
+    }
+
+  }
+
 
 
   render() {
@@ -39,33 +64,50 @@ export default class Cadastro extends Component {
           <Text style={styles.headerText}>Cadastrar Projeto</Text>
         </View>
 
-        <View style={styles.boxInputs}>
+        <KeyboardAwareScrollView style={styles.keyboardView}  >
 
-          <TextInput
-            style={styles.cadastroInputs}
-            placeholder="Nome projeto:"
-            placeholderTextColor={'black'}
-          />
+          <View style={styles.boxInputs}>
+            <TextInput onChangeText = {nomeProjeto => this.setState({nomeProjeto})}
+              style={styles.cadastroInputs}
+              placeholder="Nome projeto:"
+              placeholderTextColor={'black'}
 
-          <TextInput
-            style={styles.cadastroInputs}
-            placeholder="Tema:"
-            placeholderTextColor={'black'}
-          />
+            />
+
+            <View style={styles.cadastroInputs}>
+            <RNPickerSelect
+              onValueChange={idTema => this.setState({idTema})}
+              items={[
+                {key : 1, label: 'React-Native', value: 1 },
+                {key : 2, label: 'Infra de uma rede pequena', value: 2 },
+                {key : 3, label: 'Desing', value: 3 },
+              ]}
+
+              placeholder={{
+                label: 'Selecione um tema...',
+                value: null,
+
+            }}
+            />
+            </View>
 
 
-          <TextInput
-            multiline
-            style={styles.cadastroInputsDescricao}
-            placeholder="Descricao:"
-            placeholderTextColor={'black'}
-          />
+            <TextInput
+              multiline
+              style={styles.cadastroInputsDescricao}
+              placeholder="Descricao:"
+              placeholderTextColor={'black'}
+              onChangeText = {descricao => this.setState({descricao})}
+              value = {this.state.descricao}
+            />
 
-        <Pressable style = {styles.cadastroButton}>
-          <Text style = {styles.cadastroButtonText}>Cadastrar</Text>
-        </Pressable>
+            <TouchableOpacity onPress = {() => this.cadastrarProjeto()} style={styles.cadastroButton}>
+              <Text style={styles.cadastroButtonText}>Cadastrar</Text>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAwareScrollView>
 
-        </View>
+
       </View>
     )
   }
@@ -74,11 +116,10 @@ export default class Cadastro extends Component {
 const styles = StyleSheet.create({
 
   main: {
-    alignItems : 'center',
+    alignItems: 'center',
     backgroundColor: 'white',
-    flex : 1
+    flex: 1
   },
-
 
   header: {
     backgroundColor: '#EFEFEF',
@@ -91,14 +132,14 @@ const styles = StyleSheet.create({
   headerText: {
     fontFamily: 'RedHatDisplay-Medium',
     fontSize: 30,
-    color : '#444343'
+    color: '#444343'
 
   },
 
-  boxInputs : {
-    alignItems : 'center',
-    justifyContent : 'space-around',
-    flex : 1
+  boxInputs: {
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flex: 1
   },
 
   cadastroInputs: {
@@ -108,7 +149,8 @@ const styles = StyleSheet.create({
     height: 55,
     backgroundColor: '#8FB7C6',
     borderRadius: 31,
-    paddingLeft: 30
+    paddingLeft: 30,
+    marginTop: 40
   },
 
   cadastroInputsDescricao: {
@@ -120,21 +162,23 @@ const styles = StyleSheet.create({
     borderRadius: 31,
     textAlignVertical: 'top',
     paddingLeft: 32,
-    paddingRight: 32
+    paddingRight: 32,
+    marginBottom: 30,
+    marginTop: 40
   },
 
   cadastroButton: {
     width: 177,
     height: 61,
-    backgroundColor : '#226089',
-    paddingLeft : 14,
-    paddingTop : 10,
+    backgroundColor: '#226089',
+    paddingLeft: 14,
+    paddingTop: 10,
   },
 
-  cadastroButtonText : {
-   fontSize : 31,
-   color : 'white',
-   fontFamily: 'RedHatDisplay-Bold',
-  } 
+  cadastroButtonText: {
+    fontSize: 31,
+    color: 'white',
+    fontFamily: 'RedHatDisplay-Bold',
+  }
 
 });

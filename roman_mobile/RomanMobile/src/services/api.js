@@ -6,7 +6,7 @@ const api = axios.create({
 
 
 // api vini baseURL:
-//  'http://endereco aqui:5000/api'
+baseURL: 'http://192.168.3.253:5000/api'
 
 // api joao
 // baseURL: 'http://endereco aqui:5000/api'

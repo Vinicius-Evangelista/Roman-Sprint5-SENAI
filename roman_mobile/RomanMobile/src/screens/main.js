@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 //Components React-Native
 import {
-    Alert,
     Image,
     StatusBar,
     StyleSheet,
@@ -18,7 +17,6 @@ const bottomTab = createBottomTabNavigator();
 import Home from './home'
 import Perfil from './perfil';
 import Cadastro from './cadastro';
-import { tsNonNullExpression } from '@babel/types';
 
 
 export default class BarraNavegacao extends Component {
@@ -68,7 +66,8 @@ export default class BarraNavegacao extends Component {
                         tabBarActiveBackgroundColor: '#226089',
                         tabBarInactiveBackgroundColor: '#226089',
                         tabBarStyle : {height : 71},
-                        tabBarHideOnKeyboard : true
+                        tabBarHideOnKeyboard : true,
+                        tabBarVisibilityAnimationConfig : false
 
                         
                         

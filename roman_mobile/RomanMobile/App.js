@@ -9,8 +9,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 const AuthStack = createStackNavigator();
 
 import Login from './src/screens/login';
-import CadastrarProjeto from './src/screens/cadastro'
-import BarraNavegacao from './src/screens/barranavegacao'
+import Main from './src/screens/main'
 
 export default function Stack() {
   return (
@@ -24,9 +23,8 @@ export default function Stack() {
         screenOptions={{
           headerShown: false,
         }}>
-        <AuthStack.Screen name="Login" component={Login} />
-        <AuthStack.Screen name="BarraNavegacao" component={BarraNavegacao} />
-        <AuthStack.Screen name="CadastrarProjeto" component={CadastrarProjeto} />
+        {/* <AuthStack.Screen name="Login" component={Login} /> */}
+        <AuthStack.Screen name="BarraNavegacao" component={Main} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );
