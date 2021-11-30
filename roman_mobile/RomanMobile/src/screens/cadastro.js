@@ -90,14 +90,15 @@ const styles = StyleSheet.create({
 
   headerText: {
     fontFamily: 'RedHatDisplay-Medium',
-    fontSize: 30
+    fontSize: 30,
+    color : '#444343'
 
   },
 
   boxInputs : {
     alignItems : 'center',
     justifyContent : 'space-around',
-    flex: 1
+    flex : 1
   },
 
   cadastroInputs: {

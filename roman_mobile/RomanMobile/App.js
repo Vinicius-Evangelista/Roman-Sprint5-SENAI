@@ -20,13 +20,13 @@ export default function Stack() {
       />
 
       <AuthStack.Navigator
-        initialRouteName="Cadastrar-Projeto"
+        initialRouteName="BarraNavegacao"
         screenOptions={{
           headerShown: false,
         }}>
         <AuthStack.Screen name="Login" component={Login} />
-        <AuthStack.Screen name="Barra-de-navegacao" component={BarraNavegacao} />
-        <AuthStack.Screen name="Cadastrar-Projeto" component={CadastrarProjeto} />
+        <AuthStack.Screen name="BarraNavegacao" component={BarraNavegacao} />
+        <AuthStack.Screen name="CadastrarProjeto" component={CadastrarProjeto} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );

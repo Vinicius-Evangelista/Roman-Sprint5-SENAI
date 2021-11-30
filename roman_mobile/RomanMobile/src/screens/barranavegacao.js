@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 //Components React-Native
 import {
+    Alert,
     Image,
     StatusBar,
     StyleSheet,
@@ -14,44 +15,74 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const bottomTab = createBottomTabNavigator();
 
 //Components Locais
-import CadastrarProjetos from './cadastro';
-import Home from './login';
+import Home from './home'
 import Perfil from './perfil';
+import Cadastro from './cadastro';
+import { tsNonNullExpression } from '@babel/types';
 
 
 export default class BarraNavegacao extends Component {
-    render(){
-        return(
+    render() {
+        return (
 
-            <View style = {styles.main}>
+            <View style={styles.main}>
                 <StatusBar
-                hidden = {false}
-                backgroundColor = '#226089'
+                    hidden={false}
+                    backgroundColor='#226089'
                 />
 
                 <bottomTab.Navigator 
-                initialRouteName = "Cadastrar-Projeto"
-                
-                screenOptions = {({route}) => ({
+                    initialRouteName='Perfil'
+                    screenOptions={({ route }) => ({
 
-                // ?
-                tabBarIcon: () => {
-                    switch (route.name) {
-                        case 'Cadastrar-Projeto':
-                      
-                                <Image source = {require('../assets/pen-icon.png')}
-                                style = {styles.tabBarIcon}
+                        tabBarIcon: () => {
+                            if (route.name === 'Cadastro') {
+                                  return(  
+                                  
+                                  <Image source={require('../assets/pen-icon.png')}
+                                  style={styles.tabBarIcon}/>
+
+                                  )
+
+                            }
+
+                            if(route.name === 'Perfil'){
+                                return(
+                                    <Image source = {require('../assets/user-icon.png')}
+                                    style = {styles.tabBarIcon}
                                 />
-                            break;
+                                )
+                            }
+
+                            if(route.name === 'Home'){
+                              return(
+                                <Image source = {require('../assets/home-icon.png')}
+                                style = {styles.tabBarIcon}
+                            />
+                              );
+                            }
+                        },
+
+                        headerShown : false,
+                        tabBarShowLabel: false,
+                        tabBarActiveBackgroundColor: '#226089',
+                        tabBarInactiveBackgroundColor: '#226089',
+                        tabBarStyle : {height : 71},
+                        tabBarHideOnKeyboard : true
+
+                        
+                        
+                    })}
+
                     
-                        default:
-                            break;
-                    }
-                },
+                >
+                    <bottomTab.Screen name = "Cadastro" component = {Cadastro}/>
+                    <bottomTab.Screen name = "Home" component = {Home}/>
+                    <bottomTab.Screen name = "Perfil" component = {Perfil}/>
+                </bottomTab.Navigator>
 
 
-                })}
-                />   
+
             </View>
         );
     }
@@ -59,14 +90,14 @@ export default class BarraNavegacao extends Component {
 
 const styles = StyleSheet.create({
 
-    main : {
-        flex : 1,
+    main: {
+        flex: 1,
         backgroundColor: '#F1F1F1'
     },
 
-    tabBarIcon : {
-        width: 22,
-        height: 22
+    tabBarIcon: {
+        width: 43,
+        height: 43
     }
 
 })
