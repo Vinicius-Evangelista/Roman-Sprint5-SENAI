@@ -19,14 +19,13 @@ export default function Stack() {
       />
 
       <AuthStack.Navigator
-        initialRouteName="BarraNavegacao"
+        initialRouteName="Login"
         screenOptions={{
           headerShown: false,
         }}>
         {/* <AuthStack.Screen name="Login" component={Login} /> */}
-        <AuthStack.Screen name="BarraNavegacao" component={Main} />
+        <AuthStack.Screen name="Main" component={Main} />
         <AuthStack.Screen name="Login" component={Login} />
-        <AuthStack.Screen name="Home" component={Home} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );

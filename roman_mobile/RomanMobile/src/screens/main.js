@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 //Components React-Native
 import {
+    Alert,
     Image,
     StatusBar,
     StyleSheet,
@@ -17,6 +18,7 @@ const bottomTab = createBottomTabNavigator();
 import Home from './home'
 import Perfil from './perfil';
 import Cadastro from './cadastro';
+
 
 
 export default class BarraNavegacao extends Component {
@@ -37,7 +39,7 @@ export default class BarraNavegacao extends Component {
                             if (route.name === 'Cadastro') {
                                   return(  
                                   
-                                  <Image source={require('../assets/pen-icon.png')}
+                                  <Image source={require('../../assets/pen-icon.png')}
                                   style={styles.tabBarIcon}/>
 
                                   )
@@ -46,7 +48,7 @@ export default class BarraNavegacao extends Component {
 
                             if(route.name === 'Perfil'){
                                 return(
-                                    <Image source = {require('../assets/user-icon.png')}
+                                    <Image source = {require('../../assets/user-icon.png')}
                                     style = {styles.tabBarIcon}
                                 />
                                 )
@@ -54,7 +56,7 @@ export default class BarraNavegacao extends Component {
 
                             if(route.name === 'Home'){
                               return(
-                                <Image source = {require('../assets/home-icon.png')}
+                                <Image source = {require('../../assets/home-icon.png')}
                                 style = {styles.tabBarIcon}
                             />
                               );
@@ -66,22 +68,13 @@ export default class BarraNavegacao extends Component {
                         tabBarActiveBackgroundColor: '#226089',
                         tabBarInactiveBackgroundColor: '#226089',
                         tabBarStyle : {height : 71},
-                        tabBarHideOnKeyboard : true,
-                        tabBarVisibilityAnimationConfig : false
-
-                        
-                        
+                        tabBarHideOnKeyboard : true
                     })}
-
-                    
                 >
                     <bottomTab.Screen name = "Cadastro" component = {Cadastro}/>
                     <bottomTab.Screen name = "Home" component = {Home}/>
                     <bottomTab.Screen name = "Perfil" component = {Perfil}/>
                 </bottomTab.Navigator>
-
-
-
             </View>
         );
     }
