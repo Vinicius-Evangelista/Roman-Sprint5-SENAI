@@ -24,10 +24,10 @@ export default class Login extends Component {
     };
   }
 
-  realizarLogin=async () =>{
-    console.warn(this.state.email+' '+this.state.senha)
+  realizarLogin = async () =>{
+    // console.warn(this.state.email+' '+this.state.senha)
 
-    const resposta = await api.post('/login' , {
+    const resposta = await api.post('/Login/login' , {
       email: this.state.email,
       senha: this.state.senha,
     });
@@ -38,7 +38,7 @@ export default class Login extends Component {
 
     if (resposta.status == 200) {
       console.warn("chegou aqui")
-      this.props.navigation.navigate('Main');
+      this.props.navigation.navigate('Home');
     }
 
     console.warn(token);
