@@ -77,6 +77,11 @@ export default class Perfil extends Component {
           <Text style={styles.headerText}>Perfil</Text>
         </View>
         
+        <View >
+          <Image style={styles.imgPerfil}
+          source = {require('../../assets/user-perfil.png')}
+          ></Image>
+        </View>
 
         {/* Corpo - Body - Section */}
         <View style={styles.mainBody}>
@@ -86,14 +91,14 @@ export default class Perfil extends Component {
               onPress={() => this.props.navigation.navigate('Camera')}>
             </TouchableOpacity>
 
-            <Text style={styles.mainBodyText}>{this.state.nome}</Text>
+            <Text style={styles.mainBodyText}>{this.state.nomeProfessor}</Text>
             <Text style={styles.mainBodyText}>{this.state.email}</Text>
           </View>
 
           <TouchableOpacity
             style={styles.btnLogout}
             onPress={this.realizarLogout}>
-            <Text style={styles.btnLogoutText}>sair</Text>
+            <Text style={styles.btnLogoutText}>Sair</Text>
           </TouchableOpacity>
         </View>
 
@@ -182,16 +187,16 @@ const styles = StyleSheet.create({
   },
   // texto do botão
   btnLogoutText: {
-    fontSize: 16,
+    fontSize: 23,
     fontFamily: 'Open Sans',
-    color: '#B727FF',
+    color: '#4592AF',
   },
   footer: {
     backgroundColor: '#226089',
     height: 85
   },
   imgPerfil: {
-     width: 10
+    marginTop: 40
   },
   mainHeader: {
     flex: 1,
@@ -233,6 +238,7 @@ const styles = StyleSheet.create({
   // informações do usuário
   mainBodyInfo: {
     alignItems: 'center',
+    marginTop: 30
   },
   mainBodyImg: {
     backgroundColor: '#ccc',
@@ -242,8 +248,8 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   mainBodyText: {
-    color: '#999',
-    fontSize: 16,
+    color: '#000000',
+    fontSize: 21,
     marginBottom: 20,
   }
 });
