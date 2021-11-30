@@ -23,7 +23,7 @@ namespace Roman.webApi.Controllers
             _professorRepository = new ProfessorRepository();
         }
 
-        [Authorize( Roles = "2")]
+       
         [HttpPost("Cadastrar")]
         public IActionResult CadastrarProjeto(Projeto novoProjeto)
         {
