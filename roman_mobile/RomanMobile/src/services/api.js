@@ -9,7 +9,7 @@ const api = axios.create({
 baseURL: 'http://192.168.3.253:5000/api'
 
 // api joao
-// baseURL: 'http://endereco aqui:5000/api'
+//  baseURL: 'http://192.168.5.152:5000/api'
 
 // api rafa
 // baseURL: 'http://192.168.15.34:5000/api'

@@ -25,6 +25,8 @@ export default function Stack() {
         }}>
         {/* <AuthStack.Screen name="Login" component={Login} /> */}
         <AuthStack.Screen name="BarraNavegacao" component={Main} />
+        <AuthStack.Screen name="Login" component={Login} />
+        <AuthStack.Screen name="Home" component={Home} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );
