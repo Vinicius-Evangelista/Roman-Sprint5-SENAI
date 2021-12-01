@@ -7,7 +7,7 @@ Aplicativo desenvolvido com intuito de ajudar e falicitar o trabalho de professo
 acesso a projetos já feitos por outros professores, obter ideias e adquirir inspiração para a cricação de 
 conteúdo, preparação de aulas e projetos se tornou fácil com a geleria de projetos disponibilizadas no Roman.
 
-### Roman 📘 está em beta... ❗
+### Roman 📘 está em alpha... ❗
 
  ##### Features
  
