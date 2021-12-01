@@ -7,4 +7,8 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Roman.webApi
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\52645548890\Desktop\Roman-Sprint5-SENAI\roman_back-end\Roman.webApi\Roman.webApi\
+=======
+build_property.ProjectDir = C:\Users\47460654892\Documents\PROJETOS\Roman-Sprint5-SENAI\roman_back-end\Roman.webApi\Roman.webApi\
+>>>>>>> 6cb5ad04b7686554a4c8a3782355fffaf9b21a15

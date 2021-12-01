@@ -13,10 +13,9 @@ export default class Home extends Component {
 
   buscarProjetos = async () => {
     try {
-       // debugger;
     const r = await api.get('/Usuarios/Projetos/Listar');
     //  console.warn(r);
-    const dadosDaApi = r.data;
+    const dadosDaApi = await r.data;
     this.setState({listaProjetos: dadosDaApi});
     } catch (error) {
       console.warn(error);

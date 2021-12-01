@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\52645548890\\Desktop\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\52645548890\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\47460654892\\Documents\\PROJETOS\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\47460654892\\Documents\\PROJETOS\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\47460654892\\Documents\\PROJETOS\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
+        "projectName": "Roman.webApi",
+        "projectPath": "C:\\Users\\47460654892\\Documents\\PROJETOS\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\Roman.webApi.csproj",
+        "packagesPath": "C:\\Users\\47460654892\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\47460654892\\Documents\\PROJETOS\\Roman-Sprint5-SENAI\\roman_back-end\\Roman.webApi\\Roman.webApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\47460654892\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 6cb5ad04b7686554a4c8a3782355fffaf9b21a15
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,7 +110,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> 6cb5ad04b7686554a4c8a3782355fffaf9b21a15
         }
       }
     }
