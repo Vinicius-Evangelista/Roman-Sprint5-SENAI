@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 import api from '../services/api';
 
@@ -35,6 +35,10 @@ export default class Home extends Component {
           <Text style={styles.headerText}>Projetos</Text>
         </View>
 
+        <TouchableOpacity  onPress = {(this.buscarProjetos)}>
+          <Text style = {styles.ButtonAtualizar} >Atualizar</Text>
+        </TouchableOpacity>
+
       {/* Corpo - Body */}
       <View  style={styles.boxInputs}>
         <FlatList
@@ -61,8 +65,7 @@ renderItem = ({item}) => (
       </Text>
       <Text style={styles.flatItemInfo}>
         {Intl.DateTimeFormat("pt-BR", {
-                          year: 'numeric', month: 'short', day: 'numeric',
-                          hour: 'numeric', minute: 'numeric', hour12: true 
+                          year: 'numeric', month: 'short', day: 'numeric'
                       }).format(new Date(item.dataCriacao))}
       </Text>
     </View>
@@ -103,6 +106,13 @@ renderItem = ({item}) => (
       fontSize: 30,
       color : '#444343'
   
+    },
+
+    ButtonAtualizar: {
+      fontFamily: 'RedHatDisplay-Regular',
+      fontSize : 23,
+      color : '#226089',
+      paddingTop : 10
     },
   
     boxInputs : {
@@ -151,4 +161,6 @@ renderItem = ({item}) => (
      fontFamily: 'RedHatDisplay-Regular',
     } 
   
+
+
   });

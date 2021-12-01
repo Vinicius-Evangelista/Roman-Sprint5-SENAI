@@ -26,8 +26,7 @@ export default class Cadastro extends Component {
       //States
       idTema: 0,
       nomeProjeto: '',
-      descricao: '',
-      dataCriacao: new Date(),
+      descricao: ''
 
     };
   }
@@ -39,7 +38,9 @@ export default class Cadastro extends Component {
         idTema : this.state.idTema,
         nomeProjeto : this.state.nomeProjeto,
         descricao : this.state.descricao,
-        dataCriacao : this.state.dataCriacao
+        dataCriacao : Intl.DateTimeFormat({
+          year: 'numeric', month: 'short', day: 'numeric',
+      }).format(new Date())
       };
 
       const token = await AsyncStorage.getItem('userToken');
