@@ -32,7 +32,7 @@ export default class BarraNavegacao extends Component {
                 />
 
                 <bottomTab.Navigator 
-                    initialRouteName='Perfil'
+                    initialRouteName='Home'
                     screenOptions={({ route }) => ({
 
                         tabBarIcon: () => {
