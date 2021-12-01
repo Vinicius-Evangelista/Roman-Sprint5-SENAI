@@ -39,9 +39,20 @@ export default class Cadastro extends Component {
         idTema : this.state.idTema,
         nomeProjeto : this.state.nomeProjeto,
         descricao : this.state.descricao,
-        dataCriacao : new Date()
+        dataCriacao : this.state.dataCriacao
       };
-      const resposta = await api.post('/Professores/cadastrar', projeto, {});
+
+      const token = await AsyncStorage.getItem('userToken');
+
+      const resposta = await api.post('/Professores/cadastrar', projeto, {
+
+        headers : {
+          Authorization : 'Bearer ' + token
+        }
+
+      });
+
+
 
       if(resposta.status === 201){
         console.warn('foi criado !')

@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../services/api';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class Login extends Component {
   constructor(props) {
@@ -25,21 +24,25 @@ export default class Login extends Component {
   realizarLogin = async () =>{
     // console.warn(this.state.email+' '+this.state.senha)
 
-    const resposta = await api.post('/Login/login' , {
-      email: this.state.email,
-      senha: this.state.senha,
-    });
-
-    const token = resposta.data.token;
-
-    await AsyncStorage.setItem('userToken', token);
-
-    if (resposta.status == 200) {
-      console.warn("chegou aqui")
-      this.props.navigation.navigate('Home');
+    try {
+      const resposta = await api.post('/Login/login' , {
+        email: this.state.email,
+        senha: this.state.senha,
+      });
+  
+      const token = resposta.data.token;
+  
+      await AsyncStorage.setItem('userToken', token);
+  
+      if (resposta.status == 200) {
+       
+        this.props.navigation.navigate('Main');
+      }
+    } catch (error) {
+      console.warn(error)
     }
 
-    console.warn(token);
+
 
   }
   

@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 import api from '../services/api';
-
-import {TouchableOpacity} from 'react-native-gesture-handler';
-
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class Home extends Component {
   constructor(props) {
@@ -66,7 +62,7 @@ renderItem = ({item}) => (
       <Text style={styles.flatItemInfo}>
         {Intl.DateTimeFormat("pt-BR", {
                           year: 'numeric', month: 'short', day: 'numeric',
-                          hour: 'numeric', minute: 'numeric', hour12: true
+                          hour: 'numeric', minute: 'numeric', hour12: true 
                       }).format(new Date(item.dataCriacao))}
       </Text>
     </View>
